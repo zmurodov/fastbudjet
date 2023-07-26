@@ -1,0 +1,2117 @@
+﻿<html lang="en">
+<head>
+    <title>Быстрый Бюджет - Web</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Быстрый Бюджет: the_most_intuitive_way_to_manage_your_money">
+    <meta name="author" content="AppFer S.R.L.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+
+    <meta name="msapplication-TileImage" content="~/static/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="~/static/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/static/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/static/images/favicons/favicon-16x16.png">
+    @*<link rel="manifest" href="~/static/site.webmanifest">*@
+    <link rel="shortcut icon" href="~/static/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="~/static/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="~/static/css/11/common.min.css?">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/css/bootstrap-material-datetimepicker.min.css"
+          integrity="sha512-uLI05NEY4Yj4tbrsvcBHTcRJBT4gZaxENUHwjWMcLIK0xaVzpr4ScBA5Wc7dgw/wVTzKLGWsq0MeXQp0SkXpIQ=="
+          crossorigin="anonymous">
+
+
+    <!-- <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-auth.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script> -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js"
+            integrity="sha256-2upzq+m3oG9Q4Xye6pGvLrXgrzOKtTgR1D2GCLUzL2o=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+
+    <script defer="" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.0-rc.0/dist/js.cookie.min.js"
+            integrity="sha256-hedM82f91ww727YD34VXT09+mpm293w+C0zuHJ/lEFw=" crossorigin="anonymous"></script>
+    <script defer=""
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/js/bootstrap-material-datetimepicker.min.js"
+            integrity="sha512-LRkOtikKE2LFHPWiWh0/bfFynswxRwCZ5O7PkXTVFPcprw376xfOemiEHEOmCCmiwS6eLFUh2fb+Gqxc0waTSg=="
+            crossorigin="anonymous"></script>
+
+    <script defer="" src="https://cdn.jsdelivr.net/npm/sortablejs@1.10.1/Sortable.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@1.0.1/jquery-sortable.js"></script>
+
+    <script defer="" src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"
+            integrity="sha256-AFAYEOkzB6iIKnTYZOdUf9FFje6lOTYdwRJKwTN5mks=" crossorigin="anonymous"></script>
+
+
+
+    <script>
+        window.jQuery || document.write('<script src="/static/cdn_fallback/jquery/3.4.1/jquery.min.js"><\/script>');
+        window.moment || document.write('<script src="/static/cdn_fallback/moment.js/2.23.0/moment-with-locales.min.js"><\/script>');
+        window.Popper || document.write('<script src="/static/cdn_fallback/popper.js/1.14.3/umd/popper.min.js"><\/script>');
+        window.Cookies || document.write('<script src="/static/cdn_fallback/js-cookie@2/src/js.cookie.min.js"><\/script>');
+    </script>
+    <!-- <script src="static/cdn_fallback/js-cookie@2/src/js.cookie.min.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dexie/3.0.3/dexie.min.js"
+            integrity="sha512-aEtNzq8X5E0ambgeM68H174SOXaANJ6wDqJ0TuVIx4R2J4fRdUA0nLzx0faA1mmViqb+r0VX7cOXkskxyJENUA=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+            integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+
+    <!-- <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/dropbox.js/7.3.1/Dropbox-sdk.min.js"
+      integrity="sha512-glHlas6IArG2yVKYMwsu3AfBMYfjIt8FkMBq7Zgmnq6++/hvg/48XXRvV7PHo/Qo7cnsMmBqSolifDjkEjJsVA=="
+      crossorigin="anonymous"></script> -->
+
+
+
+
+    <script defer="" src="~/static/javascript/a_libs/chartjs-plugin-labels.min.js"></script>
+
+    <style>
+        ._3emE9--dark-theme .-S-tR--ff-downloader {
+            background: rgba(30, 30, 30, .93);
+            border: 1px solid rgba(82, 82, 82, .54);
+            box-shadow: 0 4px 7px rgba(30, 30, 30, .55);
+            color: #fff
+        }
+
+            ._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn {
+                background: #3d4b52
+            }
+
+                ._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover {
+                    background: #131415
+                }
+
+            ._3emE9--dark-theme .-S-tR--ff-downloader ._10vpG--footer {
+                background: rgba(30, 30, 30, .93)
+            }
+
+        ._2mDEx--white-theme .-S-tR--ff-downloader {
+            background: #fff;
+            border: 1px solid rgba(82, 82, 82, .54);
+            box-shadow: 0 4px 7px rgba(30, 30, 30, .55);
+            color: #314c75
+        }
+
+            ._2mDEx--white-theme .-S-tR--ff-downloader ._6_Mtt--header {
+                font-weight: 700
+            }
+
+            ._2mDEx--white-theme .-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice {
+                border: 0;
+                color: rgba(0, 0, 0, .88)
+            }
+
+            ._2mDEx--white-theme .-S-tR--ff-downloader ._10vpG--footer {
+                background: #fff
+            }
+
+        .-S-tR--ff-downloader {
+            display: block;
+            overflow: hidden;
+            position: fixed;
+            bottom: 20px;
+            right: 7.1%;
+            width: 330px;
+            height: 180px;
+            background: rgba(30, 30, 30, .93);
+            border-radius: 2px;
+            color: #fff;
+            z-index: 99999999;
+            border: 1px solid rgba(82, 82, 82, .54);
+            box-shadow: 0 4px 7px rgba(30, 30, 30, .55);
+            transition: .5s
+        }
+
+            .-S-tR--ff-downloader._3M7UQ--minimize {
+                height: 62px
+            }
+
+                .-S-tR--ff-downloader._3M7UQ--minimize .nxuu4--file-info,
+                .-S-tR--ff-downloader._3M7UQ--minimize ._6_Mtt--header {
+                    display: none
+                }
+
+            .-S-tR--ff-downloader ._6_Mtt--header {
+                padding: 10px;
+                font-size: 17px;
+                font-family: sans-serif
+            }
+
+                .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn {
+                    float: right;
+                    background: #f1ecec;
+                    height: 20px;
+                    width: 20px;
+                    text-align: center;
+                    padding: 2px;
+                    margin-top: -10px;
+                    cursor: pointer
+                }
+
+                    .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover {
+                        background: #e2dede
+                    }
+
+            .-S-tR--ff-downloader ._13XQ2--error {
+                color: red;
+                padding: 10px;
+                font-size: 12px;
+                line-height: 19px
+            }
+
+            .-S-tR--ff-downloader ._2dFLA--container {
+                position: relative;
+                height: 100%
+            }
+
+                .-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info {
+                    padding: 6px 15px 0;
+                    font-family: sans-serif
+                }
+
+                    .-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info div {
+                        margin-bottom: 5px;
+                        width: 100%;
+                        overflow: hidden
+                    }
+
+                .-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice {
+                    margin-top: 21px;
+                    font-size: 11px
+                }
+
+            .-S-tR--ff-downloader ._10vpG--footer {
+                width: 100%;
+                bottom: 0;
+                position: absolute;
+                font-weight: 700
+            }
+
+                .-S-tR--ff-downloader ._10vpG--footer ._2V73d--loader {
+                    -webkit-animation: n0BD1--rotation 3.5s linear forwards;
+                    animation: n0BD1--rotation 3.5s linear forwards;
+                    position: absolute;
+                    top: -120px;
+                    left: calc(50% - 35px);
+                    border-radius: 50%;
+                    border: 5px solid #fff;
+                    border-top-color: #a29bfe;
+                    height: 70px;
+                    width: 70px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center
+                }
+
+                .-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar {
+                    width: 100%;
+                    height: 18px;
+                    background: #dfe6e9;
+                    border-radius: 5px
+                }
+
+                    .-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar ._1FVu9--progress-bar {
+                        height: 100%;
+                        background: #8bc34a;
+                        border-radius: 5px
+                    }
+
+                .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status {
+                    margin-top: 10px
+                }
+
+                    .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1XilH--state {
+                        float: left;
+                        font-size: .9em;
+                        letter-spacing: 1pt;
+                        text-transform: uppercase;
+                        width: 100px;
+                        height: 20px;
+                        position: relative
+                    }
+
+                    .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1jiaj--percentage {
+                        float: right
+                    }
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        @@keyframes chartjs-render-animation {
+            from {
+                opacity: .99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            animation: chartjs-render-animation 1ms
+        }
+
+        .chartjs-size-monitor,
+        .chartjs-size-monitor-expand,
+        .chartjs-size-monitor-shrink {
+            position: absolute;
+            direction: ltr;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: -1
+        }
+
+            .chartjs-size-monitor-expand > div {
+                position: absolute;
+                width: 1000000px;
+                height: 1000000px;
+                left: 0;
+                top: 0
+            }
+
+            .chartjs-size-monitor-shrink > div {
+                position: absolute;
+                width: 200%;
+                height: 200%;
+                left: 0;
+                top: 0
+            }
+    </style>
+
+    <style>
+        .site-footer {
+            background-color: #222222;
+            padding: 45px 0 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: rgb(154, 160, 166);
+        }
+
+            .site-footer hr {
+                border-top-color: #bbb;
+                opacity: 0.5
+            }
+
+                .site-footer hr.small {
+                    margin: 20px 0
+                }
+
+            .site-footer h6 {
+                color: #fff;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin-top: 5px;
+                letter-spacing: 2px
+            }
+
+            .site-footer a {
+                color: white;
+            }
+
+                .site-footer a:hover {
+                    color: #3366cc;
+                    text-decoration: none;
+                }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+            .footer-links li {
+                display: block
+            }
+
+            .footer-links a {
+                color: rgb(154, 160, 166)
+            }
+
+                .footer-links a:active, .footer-links a:focus, .footer-links a:hover {
+                    color: #3366cc;
+                    text-decoration: none;
+                }
+
+            .footer-links.inline li {
+                display: inline-block
+            }
+
+        .site-footer .social-icons {
+            text-align: right
+        }
+
+            .site-footer .social-icons a {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                margin-left: 6px;
+                margin-right: 0;
+                border-radius: 100%;
+                background-color: #33353d
+            }
+
+        .copyright-text {
+            margin: 0
+        }
+
+        @@media (max-width:991px) {
+            .site-footer [class^=col-] {
+                margin-bottom: 30px
+            }
+        }
+
+        @@media (max-width:767px) {
+            .site-footer {
+                padding-bottom: 0
+            }
+
+                .site-footer .copyright-text, .site-footer .social-icons {
+                    text-align: center
+                }
+        }
+
+        .social-icons {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+
+            .social-icons li {
+                display: inline-block;
+                margin-bottom: 4px
+            }
+
+                .social-icons li.title {
+                    margin-right: 15px;
+                    text-transform: uppercase;
+                    color: #96a2b2;
+                    font-weight: 700;
+                    font-size: 13px
+                }
+
+            .social-icons a {
+                background-color: #eceeef;
+                color: rgb(154, 160, 166);
+                font-size: 16px;
+                display: inline-block;
+                line-height: 44px;
+                width: 44px;
+                height: 44px;
+                text-align: center;
+                margin-right: 8px;
+                border-radius: 100%;
+                -webkit-transition: all .2s linear;
+                -o-transition: all .2s linear;
+                transition: all .2s linear
+            }
+
+                .social-icons a:active, .social-icons a:focus, .social-icons a:hover {
+                    color: #fff;
+                    background-color: #29aafe
+                }
+
+            .social-icons.size-sm a {
+                line-height: 34px;
+                height: 34px;
+                width: 34px;
+                font-size: 14px
+            }
+
+            .social-icons a.facebook:hover {
+                background-color: #3b5998
+            }
+
+            .social-icons a.twitter:hover {
+                background-color: #00aced
+            }
+
+            .social-icons a.linkedin:hover {
+                background-color: #007bb6
+            }
+
+            .social-icons a.dribbble:hover {
+                background-color: #ea4c89
+            }
+
+        @@media (max-width:767px) {
+            .social-icons li.title {
+                display: block;
+                margin-right: 0;
+                font-weight: 600
+            }
+        }
+
+        .social-icons li a i {
+            line-height: inherit;
+        }
+    </style>
+
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        #chartjs-tooltip {
+            opacity: 1;
+            position: absolute;
+            background: rgba(0, 0, 0, .7);
+            color: white;
+            border-radius: 3px;
+            -webkit-transition: all .1s ease;
+            transition: all .1s ease;
+            pointer-events: none;
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+
+        .chartjs-tooltip-key {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 10px;
+        }
+    </style>
+
+
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.992.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+    <div class="container-fluid background_gray">
+
+        @await Component.InvokeAsync("HomeSideNav")
+
+        <div id="page_container">
+
+
+            <nav id="navbar_top" class="navbar navbar-expand-md navbar-dark">
+                <div class="d-flex align-items-center w-100">
+
+                    <div class="navbar-nav ml-3">
+                        <a id="sidebar_collapse_button" class="nav-link nav-item" href="#">
+                            <i class="material-icons">menu</i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-brand noselect" id="navbar_page_title">
+                        @if (ViewData["Header"] != null)
+                        {
+                            @ViewData["Header"]
+                        }
+                    </div>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li id="nav_button_search" class="nav-item noselect hidden-element">
+                            <a class="nav-link"><i class="material-icons">search</i></a>
+                        </li>
+
+                        <li class="nav-item dropdown noselect">
+                            <a class="nav-link" id="dropdown_menu_other" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown_menu_other">
+                                <a class="dropdown-item" id="other_support"
+                                   data-text-2="Если у вас остались вопросы, пожалуйста, свяжитесь с нашей службой по работе с клиентами по адресу support@fastbudget.it">
+                                    Поддержка
+                                    &amp; Обратная связь
+                                </a>
+                                <a class="dropdown-item" id="other_sign_out">Выйти</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+
+
+
+
+
+            <div id="template_transaction" class="d-none">
+                <div id="template_transaction_container" class="item_selector_light">
+                    <div class="d-flex justify-content-between align-items-center w-100 py-1 pl-2 pr-1">
+
+                        <div class="position-relative">
+
+                            <img id="template_tr_icon_category" draggable="false" class="transaction_icon" src=""
+                                 data-toggle="collapse">
+                            <img id="template_tr_icon_unchecked" draggable="false" class="tr_checked_icon hidden-element"
+                                 src="static/images/other/ic_checked_filled_circle.webp" data-toggle="collapse">
+                        </div>
+
+                        <div class="flex_layout" data-toggle="collapse">
+                            <div class="d-flex justify-content-between">
+                                <div id="template_tr_category" class="text-left mr-2"></div>
+                                <div id="template_tr_value"></div>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <div id="template_tr_account" class="mr-2"></div>
+                                <div id="template_tr_date" class="text-right"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="dropdown menu_holder" id="template_tr_options">
+                            <div class="d-flex align-items-center justify-content-center transaction_options noselect"
+                                 data-toggle="dropdown">
+                                <i class="material-icons">more_vert</i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item hidden-element" type="button"
+                                        id="template_tr_options_repeat_now">
+                                    Повторить
+                                </button>
+                                <button class="dropdown-item hidden-element" type="button"
+                                        id="template_tr_options_skip_repetition">
+                                    Пропустить
+                                </button>
+                                <button class="dropdown-item" type="button" id="template_tr_options_duplicate">
+                                    Продублировать
+                                    операцию
+                                </button>
+                                <button class="dropdown-item" type="button" id="template_tr_options_edit">
+                                    Редактировать
+                                    операцию
+                                </button>
+                                <button class="dropdown-item" type="button" id="template_tr_options_delete">Удалить операцию</button>
+                            </div>
+                        </div>
+
+
+                        <div id="template_tr_color" class="lateral_band ml-2 noselect"></div>
+                    </div>
+
+
+                    <div class="collapse">
+                        <pre id="template_tr_scheduled_details" class="text-center mx-4 my-1 hidden-element"></pre>
+
+                        <div class="d-flex justify-content-between mx-3 mx-md-4 my-1">
+                            <div id="template_tr_from_to" class="mr-3"></div>
+                            <div id="template_tr_notes"></div>
+                        </div>
+                        <div id="template_tr_added_from" class="d-flex justify-content-center mx-4 my-1"></div>
+                        <div id="template_tr_is_pending"
+                             class="d-flex justify-content-center mx-4 my-1 text-secondary hidden-element">
+                            Данная транзакция ожидает
+                            подтверждения от вашего банка
+                        </div>
+
+                        <button type="button" id="template_tr_checked_btn"
+                                class="btn_general btn_red d-flex justify-content-center mx-auto mb-2 hidden-element">
+                            Проверено
+                        </button>
+
+
+                        <div class="d-flex justify-content-center">
+                            <button id="button_tr_download_photo" class="btn_flat mb-1 hidden-element">Фото (Dropbox)</button>
+                        </div>
+                        <div class="progress mx-3 mb-2 hidden-element" id="template_tr_photo_waiting">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                        </div>
+                        <img id="template_tr_photo_img" draggable="false" class="mt-2 mb-3 w-100 cursor_default hidden-element"
+                             src="#">
+                        <div id="template_tr_photo_not_found" class="d-flex justify-content-center mx-4 mb-2 hidden-element">
+                            Фото не
+                            найдено
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="template_category" class="d-none">
+                <div class="d-flex align-items-center w-100 px-1 item_selector" id="template_category_container">
+                    <div id="template_category_subcat_line_container" class="d-flex flex-column subcategory_lines">
+                        <div class="vertical_line"></div>
+                        <div class="horizontal_line"></div>
+                        <div id="template_category_subcat_bottom_line" class="vertical_line"></div>
+                    </div>
+
+                    <img id="template_category_icon_img" draggable="false" class="transaction_icon my-1" src="">
+
+                    <div class="flex_layout">
+                        <div id="template_category_name" class="mr-2">Name</div>
+                    </div>
+
+
+                    <div id="template_category_options" class="dropdown menu_holder hidden-element">
+                        <div class="d-flex align-items-center justify-content-center transaction_options noselect"
+                             data-toggle="dropdown">
+                            <i class="material-icons">more_vert</i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="button" id="template_category_options_edit">
+                                Редактировать
+                                категорию
+                            </button>
+                            <button class="dropdown-item" type="button" id="template_category_options_delete">
+                                Удалить
+                                категорию
+                            </button>
+                        </div>
+                    </div>
+
+                    <i id="template_category_show_subcats" class="material-icons ml-auto">keyboard_arrow_down</i>
+                </div>
+            </div>
+
+
+
+            <div id="template_tr_temp" class="d-none">
+                <div class="d-flex align-items-center w-100 px-1 py-1 item_selector" id="template_template_container">
+                    <img id="template_tr_temp_icon_img" draggable="false" class="transaction_icon" src="">
+
+                    <div class="flex_layout">
+                        <div id="template_tr_temp_name" class="mr-2">Name</div>
+                    </div>
+
+
+                    <div id="template_tr_temp_color" class="lateral_band ml-2 noselect"></div>
+                </div>
+            </div>
+
+
+
+            <div id="template_tr_temp_full" class="d-none">
+                <div class="item_selector" id="template_template_full_container">
+                    <div class="d-flex align-items-center w-100 noselect px-1 py-1" data-toggle="collapse">
+                        <img id="template_tr_temp_full_icon_img" draggable="false" class="transaction_icon" src="">
+
+                        <div class="d-flex align-items-center row flex_layout mr-0">
+
+                            <div id="template_tr_temp_full_name" class="big_text_1 mr-2 col-lg-5 col-xl-6">Name</div>
+
+                            <div class="d-none d-lg-flex flex-column col">
+                                <div id="template_tr_temp_full_category" class="mr-2"></div>
+                                <div id="template_tr_temp_full_account" class="mr-2"></div>
+                            </div>
+
+                            <div id="template_tr_temp_full_value" class="d-none d-lg-flex ml-auto"></div>
+                        </div>
+
+
+                        <div class="dropdown menu_holder" id="template_tr_temp_full_options">
+                            <div class="d-flex align-items-center justify-content-center transaction_options noselect"
+                                 data-toggle="dropdown">
+                                <i class="material-icons">more_vert</i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" type="button" id="template_tr_temp_full_options_edit">
+                                    Редактировать
+                                    шаблон
+                                </button>
+                                <button class="dropdown-item" type="button" id="template_tr_temp_full_options_delete">
+                                    Удалить
+                                    шаблон
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div id="template_tr_temp_full_color" class="lateral_band ml-2 noselect"></div>
+                    </div>
+
+
+                    <div class="collapse">
+                        <div class="d-flex justify-content-between mx-4 my-1">
+                            <div id="template_tr_temp_full_from_to" class="mr-3"></div>
+                            <div id="template_tr_temp_full_notes"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="template_account_list" class="d-none">
+                <div class="d-flex w-100" id="t_account_list_container">
+                    <div class="flex_layout">
+                        <div class="item_selector px-1 py-2">
+                            <div id="t_account_list_name" class="d-flex justify-content-center big_text_2">Name</div>
+
+                            <div class="d-flex justify-content-between">
+                                <div id="t_account_list_currency">EUR - €</div>
+                                <div id="t_account_list_value">100 €</div>
+                            </div>
+                        </div>
+
+                        <hr class="divider px-3">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="template_account_overview" class="d-none">
+                <div class="d-flex" id="t_account_overview_container">
+                    <div class="w-100">
+                        <div class="d-flex justify-content-between px-1 py-2">
+                            <div id="t_account_overview_name" class="big_text_2">Name</div>
+
+                            <div class="">
+                                <div id="t_account_overview_value" class="text-right">100 €</div>
+                                <div id="t_account_overview_currency" class="text-right">EUR - €</div>
+                            </div>
+                        </div>
+
+                        <hr id="t_account_overview_divider" class="divider px-3">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="template_account_full" class="d-none">
+                <div class="d-flex w-100 card_small_body account_item item_selector_light" id="template_account_full_container">
+                    <div class="d-flex flex-row flex_layout px-1 py-2">
+
+
+                        <div id="t_account_full_color" class="lateral_band mr-2 hidden-element"></div>
+
+                        <div class="d-flex flex-column flex_layout">
+
+                            <div class="drag_area" id="t_account_full_click_area">
+
+                                <div class="d-flex justify-content-between">
+                                    <div id="t_account_full_name" class="big_text_2">-</div>
+                                    <div id="t_account_full_value" class="big_text_1">-</div>
+                                </div>
+
+
+                                <div class="d-flex justify-content-between mt-1">
+                                    <div class="d-flex align-items-center">
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="t_account_full_state_switch">
+                                            <label class="custom-control-label" id="t_account_full_state_label"
+                                                   for="t_account_full_state_switch">Обычный</label>
+                                        </div>
+                                        <i id="t_account_bs_state" class="material-icons hidden-element">sync</i>
+                                    </div>
+
+
+                                    <div class="d-flex align-items-end noselect">
+                                        <div class="item_small_button d-flex justify-content-center" id="t_account_full_transfer">
+                                            <i class="material-icons material-icons-30px align-self-center">repeat</i>
+                                        </div>
+
+                                        <div class="item_small_button d-flex justify-content-center" id="t_account_full_details">
+                                            <i class="material-icons material-icons-30px align-self-center">remove_red_eye</i>
+                                        </div>
+
+
+                                        <div class="menu_holder dropdown item_small_button d-flex justify-content-center"
+                                             id="t_account_full_options">
+                                            <div class="d-flex" data-toggle="dropdown">
+                                                <i class="material-icons material-icons-30px align-self-center">more_vert</i>
+                                            </div>
+                                            <div class="dropdown-menu">
+                                                <button class="dropdown-item" type="button" id="t_account_full_refresh">Обновить</button>
+                                                <button class="dropdown-item" type="button" id="t_account_full_edit">Изменить счет</button>
+                                                <button class="dropdown-item" type="button" id="t_account_full_archive">Архивировать</button>
+                                                <button class="dropdown-item" type="button" id="t_account_full_delete">Удалить счет</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="t_account_full_bottom_container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="template_account_full_bottom_details" class="d-none">
+                <div class="d-flex flex-column text-center selectable_text mt-1" id="account_full_details_item">
+                    <span id="t_account_dt_bs" class="mt-1 mb-2">-</span>
+                    <span id="t_account_dt_creation_date" class="mt-1" data-text="Дата создания:">-</span>
+                    <span id="t_account_dt_initial_currency" class="my-1" data-text="Валюта:">-</span>
+                    <span id="t_account_dt_ex_rate" class="mt-1 big_text_0" data-text="Обменный курс:">-</span>
+                    <span id="t_account_dt_initial_amount" class="my-1 big_text_0" data-text="Первоначальная сумма:">-</span>
+                    <span id="t_account_dt_notes" class="mt-1">-</span>
+                </div>
+            </div>
+
+
+
+            <div id="template_ccard_overview" class="d-none">
+                <div id="t_ccard_overview_container" class="d-flex">
+                    <div class="w-100">
+                        <div class="px-1 py-2">
+                            <div class="d-flex flex_layout justify-content-between">
+                                <div id="t_ccard_overview_name" class="big_text_2">-</div>
+                                <div id="t_ccard_overview_value" class="text-right">-</div>
+                            </div>
+
+                            <div class="d-flex flex_layout mt-1">
+                                <div class="progress_parent flex_layout py-2 mr-4">
+                                    <div class="progress flex_layout" data-toggle="tooltip" data-placement="top" title="">
+                                        <div id="t_ccard_overview_progress" class="progress-bar" role="progressbar" style="width: 0"></div>
+                                    </div>
+                                </div>
+                                <div id="t_ccard_overview_currency" class="text-right">-</div>
+                            </div>
+                        </div>
+
+                        <hr id="t_ccard_overview_divider" class="divider px-3">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="template_ccard_full" class="d-none">
+                <div class="d-flex w-100 card_small_body account_item item_selector_light" id="t_ccard_full_container">
+                    <div class="d-flex flex-column flex_layout px-1 py-2">
+                        <div id="t_ccard_full_name" class="big_text_2"></div>
+
+                        <div class="d-flex flex_layout justify-content-between mt-1 mx-2">
+                            <div id="t_ccard_full_date_from" class="small_text"></div>
+                            <div id="t_ccard_full_limit_percentage" class="small_text"></div>
+                            <div id="t_ccard_full_date_to" class="small_text"></div>
+                        </div>
+
+
+                        <div class="d-flex flex_layout">
+                            <div class="progress_parent flex_layout mx-2 my-1">
+                                <div class="progress flex_layout my-0" data-toggle="tooltip" data-placement="top" title="">
+                                    <div id="t_ccard_full_progress" class="progress-bar" role="progressbar" style="width: 0"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-column">
+                                <div id="t_ccard_full_limit" class=""></div>
+                                <div id="t_ccard_full_residual_amount" class=""></div>
+                                <div id="t_ccard_full_amount_due" class=""></div>
+                            </div>
+
+                            <div class="">
+                                <div id="t_ccard_full_value" class="big_text_1 text-right"></div>
+
+
+                                <div class="d-flex align-items-end noselect mt-1">
+                                    <div class="item_small_button d-flex justify-content-center" id="t_ccard_full_new_expense">
+                                        <i class="material-icons material-icons-30px align-self-center">add</i>
+                                    </div>
+
+                                    <div class="item_small_button d-flex justify-content-center" id="t_ccard_full_payment">
+                                        <img class="material-icons material-icons-30px align-self-center" draggable="false"
+                                             src="static/images/other/cash-multiple-grey.svg">
+                                    </div>
+
+                                    <div class="item_small_button d-flex justify-content-center" id="t_ccard_full_transfer">
+                                        <i class="material-icons material-icons-30px align-self-center">repeat</i>
+                                    </div>
+
+
+                                    <div class="menu_holder dropdown item_small_button d-flex justify-content-center"
+                                         id="t_ccard_full_options">
+                                        <div class="d-flex" data-toggle="dropdown">
+                                            <i class="material-icons material-icons-30px align-self-center">more_vert</i>
+                                        </div>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" type="button" id="t_ccard_full_options_edit">
+                                                Редактировать кредитную
+                                                карту
+                                            </button>
+                                            <button class="dropdown-item" type="button"
+                                                    id="t_ccard_full_options_archive">
+                                                Архивировать
+                                            </button>
+                                            <button class="dropdown-item" type="button" id="t_ccard_full_options_delete">
+                                                Удалить кредитную
+                                                карту
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="template_budget" class="d-none">
+                <div class="d-flex w-100 noselect" id="t_budget_container">
+                    <div class="d-flex flex-column flex_layout item_selector_light pt-1 px-2">
+                        <div id="t_budget_name" class="big_text_2"></div>
+
+                        <div class="d-flex flex_layout justify-content-between mt-1">
+                            <img id="t_budget_icon" draggable="false" class="transaction_icon" src="">
+
+                            <div class="d-flex flex-column flex_layout ml-1">
+                                <div class="d-flex flex_layout justify-content-between">
+                                    <div id="t_budget_date_from" class="small_text"></div>
+                                    <div id="t_budget_limit_percentage" class="small_text"></div>
+                                    <div id="t_budget_date_to" class="small_text"></div>
+                                </div>
+
+
+                                <div class="d-flex flex_layout">
+                                    <div class="progress_parent flex_layout mx-2 my-1">
+                                        <div class="progress flex_layout my-0" data-toggle="tooltip" data-placement="top" title="">
+                                            <div id="t_budget_progress" class="progress-bar" role="progressbar" style="width: 0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex_layout justify-content-between mt-1">
+                                    <div id="t_budget_zero_value" class="small_text"></div>
+                                    <div id="t_budget_current_value" class=""></div>
+                                    <div id="t_budget_max_value" class="small_text"></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-1" id="t_budget_buttons">
+                            <div id="t_budget_residual_amount" class="align-self-center mr-auto"></div>
+
+
+                            <div id="t_budget_options" class="d-flex noselect">
+                                <div class="item_small_button d-flex justify-content-center" id="t_budget_options_edit">
+                                    <i class="material-icons material-icons-30px align-self-center">edit</i>
+                                </div>
+
+                                <div class="item_small_button d-flex justify-content-center" id="t_budget_options_delete">
+                                    <i class="material-icons material-icons-30px align-self-center">delete</i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="template_debt" class="d-none">
+                <div class="d-flex w-100 noselect" id="t_debt_container">
+                    <div class="d-flex flex-column flex_layout item_selector_light pt-1 px-2 ">
+                        <div id="t_debt_name" class="big_text_2"></div>
+
+                        <div class="d-flex flex_layout justify-content-between mt-1">
+                            <img id="t_debt_icon" draggable="false" class="transaction_icon" src="">
+
+                            <div class="d-flex flex-column flex_layout ml-1">
+                                <div class="d-flex flex_layout justify-content-between">
+                                    <div id="t_debt_date_from" class="small_text"></div>
+                                    <div id="t_debt_repaid_percentage" class="small_text"></div>
+                                    <div id="t_debt_date_to" class="small_text"></div>
+                                </div>
+
+
+                                <div class="d-flex flex_layout">
+                                    <div class="progress_parent flex_layout mx-2 my-1">
+                                        <div class="progress flex_layout my-0" data-toggle="tooltip" data-placement="top" title="">
+                                            <div id="t_debt_progress" class="progress-bar" role="progressbar" style="width: 0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex_layout justify-content-between mt-1">
+                                    <div id="t_debt_zero_value" class="small_text"></div>
+                                    <div id="t_debt_repaid_amount" class=""></div>
+                                    <div id="t_debt_value" class="small_text"></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-1" id="t_debt_buttons">
+                            <div id="t_debt_residual_amount" class="align-self-center mr-auto"></div>
+
+
+                            <div id="t_debt_options" class="d-flex noselect">
+                                <div class="item_small_button d-flex justify-content-center" id="t_debt_repay">
+                                    <i class="material-icons material-icons-30px align-self-center">add</i>
+                                </div>
+
+                                <div class="item_small_button d-flex justify-content-center hidden-element" id="t_debt_option_archive">
+                                    <i class="material-icons material-icons-30px align-self-center">archive</i>
+                                </div>
+
+                                <div class="item_small_button d-flex justify-content-center" id="t_debt_option_edit">
+                                    <i class="material-icons material-icons-30px align-self-center">edit</i>
+                                </div>
+
+                                <div class="item_small_button d-flex justify-content-center" id="t_debt_option_delete">
+                                    <i class="material-icons material-icons-30px align-self-center">delete</i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr id="t_debt_divider" class="divider pt-1 hidden-element">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="progress w-100 hidden-element" id="progress_waiting_container_external">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" id="spinner_waiting" role="progressbar"
+                     style="width: 100%"></div>
+            </div>
+
+            <div id="main_page_container" class="container_margin_top">
+
+                <div class="progress hidden-element" id="progress_waiting_container_internal">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" id="spinner_waiting" role="progressbar"
+                         aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                </div>
+
+
+
+
+
+                <main id="main_page_content" class="container">
+
+                    @RenderBody()
+                </main>
+
+
+                <!--<footer class="container-fluid text-center mt-5 pb-4 h-25">-->
+                    @*<a id="a_back_to_top" href="#main_page_container" title="Наверх">
+                            <i class="material-icons">keyboard_arrow_up</i>
+                        </a>
+                        <span class="d-block mx-2" id="span_terms_of_services">
+                            Используя данный сайт, вы соглашаетесь с Условиями
+                            оказания услуг и Политикой Конфиденциальности.<br><a target="_blank"
+                                                                                 href="https://fastbudget.app/legal/terms-of-service-ru.html">Условия оказания услуг</a> - <a target="_blank" href="https://www.iubenda.com/privacy-policy/44712615">
+                                Политика
+                                Конфиденциальности
+                            </a>
+                        </span>
+                        <span class="d-block mx-2">©2021 AppFer S.R.L. - Все права защищены.</span>*@
+                <!--</footer>-->
+
+                <!-- Site footer -->
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <h6>О НАС</h6>
+                                <p class="text-justify">Управляйте своими личными финансами и легко отслеживайте свои деньги, расходы и бюджет</p>
+                            </div>
+
+                            <div class="col-xs-6 col-md-3">
+
+                            </div>
+
+                            <div class="col-xs-6 col-md-3">
+                                <h6>ССЫЛКИ</h6>
+                                <ul class="footer-links">
+                                    <li><a asp-controller="Home" asp-action="Index">Обзор</a></li>
+                                    <li><a asp-controller="Operations" asp-action="Index">Операции</a></li>
+                                    <li><a asp-controller="Accounts" asp-action="Index">Счета</a></li>
+                                    <li><a asp-controller="Category" asp-action="Index">Категории</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-6 col-xs-12">
+                                <p class="copyright-text">
+                                    Made by Zufar Murodov
+                                </p>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <ul class="social-icons">
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+
+
+        <div id="loading_animation_container" class="hidden-element">
+            <div class="loading_background d-flex align-content-center justify-content-center align-items-center">
+                <div class="loading_container-general">
+                    <div class="loading_internal">
+                        <div class="loading_ballcolor loading_ball_1"> </div>
+                    </div>
+                    <div class="loading_internal">
+                        <div class="loading_ballcolor loading_ball_2"> </div>
+                    </div>
+                    <div class="loading_internal">
+                        <div class="loading_ballcolor loading_ball_3"> </div>
+                    </div>
+                    <div class="loading_internal">
+                        <div class="loading_ballcolor loading_ball_4"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="modal_container" class="modal fade" role="dialog" data-backdrop="static">
+
+        </div>
+
+
+        <div id="modal_container_with_backdrop" class="modal fade" role="dialog">
+
+        </div>
+
+
+
+        <div id="modal_delete_category_message" class="modal fade" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" id="modal_message_header">
+                        <h5 class="modal-title" id="modal_message_title">Удалить категорию "test"</h5>
+                        <button type="button" class="close" id="modal_message_x_to_close" data-dismiss="modal" aria-label="Назад">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal_message_content" class="mx-1">
+                            Подкатегория
+
+                            Это последняя подкатегория. Связанная главная категория будет удалена.
+                        </p>
+
+                        <div class="form-check mt-4 mx-1" id="modal_message_checkbox_parent" style="display: none;">
+                            <input class="form-check-input" type="checkbox" value="" id="modal_message_checkbox">
+                            <label class="form-check-label" for="modal_message_checkbox" id="modal_message_checkbox_label">Больше не показывать это сообщение.</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn_modal btn_blue mr-1" data-dismiss="modal" data-deftxt="Назад" id="modal_message_close">Назад</button>
+                        <button type="button" class="btn btn_modal btn_blue" data-dismiss="modal" data-deftxt="OK" id="modal_message_confirmation">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal_message" class="modal fade" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" id="modal_message_header">
+                        <h5 class="modal-title" id="modal_message_title">Ошибка</h5>
+                        <button type="button" class="close" id="modal_message_x_to_close" data-dismiss="modal" aria-label="Назад">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal_message_content" class="mx-1">Попытайтесь обновить страницу, чтобы устранить проблему.</p>
+
+                        <div class="form-check mt-4 mx-1" id="modal_message_checkbox_parent">
+                            <input class="form-check-input" type="checkbox" value="" id="modal_message_checkbox">
+                            <label class="form-check-label" for="modal_message_checkbox" id="modal_message_checkbox_label">
+                                Больше не
+                                показывать это сообщение.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn_modal btn_blue mr-1" data-dismiss="modal" data-deftxt="Назад"
+                                id="modal_message_close">
+                            Назад
+                        </button>
+                        <button type="button" class="btn btn_modal btn_blue" data-dismiss="modal" data-deftxt="OK"
+                                id="modal_message_confirmation">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="modal_add_transaction" class="modal fade" role="dialog" data-backdrop="static">
+            <div class="modal-dialog modal-lg">
+                <div id="modal_add_tr_content" class="modal-content pt-1 pb-2 px-2">
+                    <div class="d-flex noselect">
+                        <span style="width: 42px"></span>
+                        <p class="modal_title_big mx-auto" id="modal_add_transaction_title">
+                            Новые
+                            расходы
+                        </p>
+                        <i class="material-icons navbar_icon float-right mt-2 mr-1" id="i_add_tr_select_template">star</i>
+                    </div>
+                    <div class="mt-1 mr-3">
+
+
+                        <div class="input-group ml-2">
+                            <div class="form-group wrap_strict">
+                                <label for="input_new_tr_value">Значение</label>
+                                <input type="number" class="form-control" id="input_new_tr_value" min="0" step="0.01" maxlength="15">
+                                <div class="invalid-feedback" id="input_new_tr_value_error_msg">Неверное значение</div>
+                            </div>
+
+                            <div class="input-group-append mt-2 ml-2">
+                                <span class="input-group-text" id="new_tr_value_currency">€</span>
+                            </div>
+
+                            <span class="d-flex flex-grow-1 align-self-center ml-4 mr-auto">
+                                <span class="input-group-text" id="new_tr_budget_amount_left"></span>
+                            </span>
+                        </div>
+
+
+                        <div class="input-group">
+                            <span class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <img id="new_tr_category_icon" draggable="false"
+                                         class="transaction_icon material-icons-48px align-self-center" src="~/static/icons/ic_blank_grey.svg">
+                                </span>
+                            </span>
+                            <div class="form-group wrap">
+                                <label for="input_new_tr_category">Категория</label>
+                                <input type="text" class="form-control cursor_pointer" id="input_new_tr_category"
+                                       value="Выбрать категорию" readonly="">
+                                <div class="invalid-feedback">Неверное значение</div>
+                            </div>
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons material-icons-48px align-self-center">account_balance</i>
+                                </span>
+                            </div>
+                            <div class="form-group wrap">
+                                <label for="select_new_tr_account">Счёт</label>
+                                <select id="select_new_tr_account" class="form-control" style="width: 100%">
+                                </select>
+                                <div class="invalid-feedback">Неверное значение</div>
+                            </div>
+
+
+                            <div class="custom-control custom-switch col-10 col-md-auto py-2 pb-md-0 my-auto ml-2 ml-md-5 flex-grow-1 hidden-element">
+                                <input type="checkbox" class="custom-control-input" id="new_tr_checked">
+                                <label class="custom-control-label w-100" for="new_tr_checked">Проверено</label>
+                            </div>
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons material-icons-48px align-self-center">today</i>
+                                </span>
+                            </div>
+                            <div class="form-group col-5 col-md-4 px-0 mr-3">
+                                <label for="input_new_tr_date">Дата</label>
+                                <input type="text" class="form-control datepicker" id="input_new_tr_date">
+                                <div class="invalid-feedback">Неверное значение</div>
+                            </div>
+                            <div class="form-group col-3 px-0">
+                                <label for="input_new_tr_date">Время</label>
+                                <input type="text" class="form-control datepicker" id="input_new_tr_time">
+                                <div class="invalid-feedback">Неверное значение</div>
+                            </div>
+                        </div>
+
+
+                        <div id="add_st_fields_container">
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons material-icons-48px align-self-center">settings_backup_restore</i>
+                                    </span>
+                                </div>
+                                <div class="form-group wrap_strict mb-0">
+                                    <label for="input_new_st_repeats_every">Повторяется каждые</label>
+                                    <input type="number" class="form-control" id="input_new_st_repeats_every" min="1" step="1"
+                                           maxlength="4">
+                                    <div class="invalid-feedback">Неверное значение</div>
+                                </div>
+
+
+                                <div class="w-100 d-md-none"></div>
+
+                                <div class="input-group-prepend d-md-none">
+                                    <span class="input-group-text">
+                                        <i class="material-icons-48px"></i>
+                                    </span>
+                                </div>
+                                <div class="form-group wrap ml-md-3">
+                                    <label class="d-none d-md-inline-block"> </label>
+                                    <select class="form-control" id="select_new_st_repeats_type">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons material-icons-48px align-self-center">replay</i>
+                                    </span>
+                                </div>
+                                <div class="form-group wrap_strict">
+                                    <label for="input_new_st_n_times">Количество раз</label>
+                                    <input type="number" class="form-control" id="input_new_st_n_times" min="0" step="1" maxlength="4">
+                                    <div class="invalid-feedback">Неверное значение</div>
+                                    <small class="form-text text-muted">Ноль означает отсутствие ограничений</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons material-icons-48px align-self-center">person</i>
+                                </span>
+                            </div>
+                            <div class="form-group d-flex flex-column full_width_select2_container">
+                                <label for="select_new_tr_from_to" id="label_new_tr_from_to">Кому (Необязательно)</label>
+                                <select id="select_new_tr_from_to" class="form-control full_width" style="width: 100%">
+                                </select>
+                                <div class="invalid-feedback">Ошибка: Значение очень длинное. Максимально 200 символов</div>
+                            </div>
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons material-icons-48px align-self-center">mode_edit</i>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="input_new_tr_notes">Комментарии (Необязательно)</label>
+                                <textarea type="text" class="form-control" id="input_new_tr_notes" maxlength="999" rows="2"></textarea>
+                                <div class="invalid-feedback">Ошибка: Значение очень длинное. Максимально 1000 символов</div>
+                            </div>
+                        </div>
+
+
+                        <div class="d-flex justify-content-center mt-2">
+                            <button id="button_new_tr_enable_drx" class="btn_flat mb-1 hidden-element">
+                                Фото (Dropbox
+                                Обязательно)
+                            </button>
+                        </div>
+
+                        <div class="input-group" id="new_tr_photo_upload_container">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons material-icons-48px align-self-center">photo</i>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="input_new_tr_photo_up">Добавить фото (Dropbox)</label>
+                                <input type="file" class="form-control-file" id="input_new_tr_photo_upload">
+                                <div class="invalid-feedback" id="input_new_tr_photo_error_msg"></div>
+                            </div>
+                        </div>
+
+                        <div id="img_new_tr_photo_img_container"
+                             class="w-100 mt-2 ml-1 ml-md-3 pr-0 pr-md-3 mb-3 cursor_default position-relative hidden-element">
+                            <img draggable="false" class="cursor_default w-100" src="#">
+                            <button class="btn btn_fab btn_red" style="position: absolute; top: 20px;">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <div id="new_tr_photo_not_found" class="d-flex justify-content-center mx-4 my-1 hidden-element">
+                            Фото не
+                            найдено
+                        </div>
+
+
+                        <div class="progress mt-2 ml-3 mr-1 hidden-element" id="input_new_tr_waiting">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="button" id="button_add_transaction_cancel" class="btn_general btn_red mr-2">Отменить</button>
+                        <button type="button" id="button_add_transaction_save" class="btn_general btn_red">Сохранить</button>
+                        <button type="button" id="button_add_transaction_save_new" class="btn_general btn_red ml-2">
+                            Сохранить -&gt;
+                            +
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="modal_item_list_rasxod" class="modal fade show" role="dialog" aria-modal="true">
+            @if (ViewData["RasxodCategory"] != null)
+            {
+                <div class="modal-dialog">
+                    <div class="modal-content pt-2">
+                        <p class="modal_title align-self-center" id="modal_item_list_title">Выбрать категорию</p>
+
+                        <div id="searchbar_modal_list_container" class="d-flex justify-content-center w-100 hidden-element">
+                            <div class="searchbar">
+                                <div style="width: 24px"></div>
+                                <input id="searchbar_modal_list" class="search_input" type="text" name="" placeholder="Поиск...">
+                                <div class="search_icon red"><i class="material-icons">search</i></div>
+                            </div>
+                        </div>
+
+                        <div id="modal_item_list_container" class="list-group modal_list pl-2">
+                            @foreach (var category in ViewData["RasxodCategory"] as IEnumerable<FastBudjet.Data.Models.Category>)
+                            {
+                                <div class="d-flex align-items-center w-100 px-1 item_selector" data-id="@category.CategoryId" data-name="@category.Name" id="template_category_container">
+                                    <div id="template_category_subcat_line_container" class="d-flex flex-column subcategory_lines hidden-element">
+                                        <div class="vertical_line"></div>
+                                        <div class="horizontal_line"></div>
+                                        <div id="template_category_subcat_bottom_line" class="vertical_line"></div>
+                                    </div>
+
+                                    <img id="template_category_icon_img" draggable="false" class="transaction_icon my-1" src="~/static/icons/@category.Image">
+
+                                    <div class="flex_layout">
+                                        <div id="template_category_name" class="mr-2">@category.Name</div>
+                                    </div>
+
+
+                                    <div id="template_category_options" class="dropdown menu_holder hidden-element">
+                                        <div class="d-flex align-items-center justify-content-center transaction_options noselect" data-toggle="dropdown">
+                                            <i class="material-icons">more_vert</i>
+                                        </div>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" type="button" id="template_category_options_edit">Редактировать категорию</button>
+                                            <button class="dropdown-item" type="button" id="template_category_options_delete">Удалить категорию</button>
+                                        </div>
+                                    </div>
+
+                                    <i id="template_category_show_subcats" class="material-icons ml-auto hidden-element">keyboard_arrow_down</i>
+                                </div>
+                            }
+
+
+                        </div>
+
+                        <div class="modal-footer pt-2 hidden-element">
+                            <button type="button" class="btn btn_modal btn_blue mr-1" data-dismiss="modal">Назад</button>
+                            <button type="button" class="btn btn_modal btn_blue" data-dismiss="modal" id="modal_list_ok">OK</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div id="modal_item_list_doxod" class="modal fade show" role="dialog" aria-modal="true">
+            @if (ViewData["DoxodCategory"] != null)
+            {
+                <div class="modal-dialog">
+                    <div class="modal-content pt-2">
+                        <p class="modal_title align-self-center" id="modal_item_list_title">Выбрать категорию</p>
+
+                        <div id="searchbar_modal_list_container" class="d-flex justify-content-center w-100 hidden-element">
+                            <div class="searchbar">
+                                <div style="width: 24px"></div>
+                                <input id="searchbar_modal_list" class="search_input" type="text" name="" placeholder="Поиск...">
+                                <div class="search_icon red"><i class="material-icons">search</i></div>
+                            </div>
+                        </div>
+
+                        <div id="modal_item_list_container" class="list-group modal_list pl-2">
+                            @foreach (var category in ViewData["DoxodCategory"] as IEnumerable<FastBudjet.Data.Models.Category>)
+                            {
+                                <div class="d-flex align-items-center w-100 px-1 item_selector" data-id="@category.CategoryId" data-name="@category.Name" id="template_category_container">
+                                    <div id="template_category_subcat_line_container" class="d-flex flex-column subcategory_lines hidden-element">
+                                        <div class="vertical_line"></div>
+                                        <div class="horizontal_line"></div>
+                                        <div id="template_category_subcat_bottom_line" class="vertical_line"></div>
+                                    </div>
+
+                                    <img id="template_category_icon_img" draggable="false" class="transaction_icon my-1" src="/static/icons/@category.Image">
+
+                                    <div class="flex_layout">
+                                        <div id="template_category_name" class="mr-2">@category.Name</div>
+                                    </div>
+
+
+                                    <div id="template_category_options" class="dropdown menu_holder hidden-element">
+                                        <div class="d-flex align-items-center justify-content-center transaction_options noselect" data-toggle="dropdown">
+                                            <i class="material-icons">more_vert</i>
+                                        </div>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" type="button" id="template_category_options_edit">Редактировать категорию</button>
+                                            <button class="dropdown-item" type="button" id="template_category_options_delete">Удалить категорию</button>
+                                        </div>
+                                    </div>
+
+                                    <i id="template_category_show_subcats" class="material-icons ml-auto hidden-element">keyboard_arrow_down</i>
+                                </div>
+
+                            }
+                        </div>
+
+                        <div class="modal-footer pt-2 hidden-element">
+                            <button type="button" class="btn btn_modal btn_blue mr-1" data-dismiss="modal">Назад</button>
+                            <button type="button" class="btn btn_modal btn_blue" data-dismiss="modal" id="modal_list_ok">OK</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+        <div id="modal_icon_list" class="modal fade show" role="dialog" aria-modal="true">
+            <div class="modal-dialog">
+                <div class="modal-content pt-2 px-2">
+                    <p class="modal_title align-self-center" id="modal_icon_list_title">Пиктограммы</p>
+
+                    <div id="modal_icon_list_container" class="row m-1 text-center">
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_bank.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_base_health.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_base_incomes.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_base_pet_food.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_base_road.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_base_shopping.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_bed.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_bike.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_boat.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_book.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_car.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_cards.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_cellular.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_cigarette.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_coach.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_cocktail.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_coffee.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_controller.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_cosmetics.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_courthouse.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_credit_card.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_cup.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_dice.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_drawing_tools.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_factory.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_family.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_flower.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_footprint.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_fuel.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_gift.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_hard_drive.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_health.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_heart.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_home.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_house_rent.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_journal.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_motorcycle.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_old_man.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_pacifier.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_party_hat.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_piggy_bank.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_water_drop.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_blank_black.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_blank_blue.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_blank_green.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_blank_orange.svg">
+                        </div>
+                        <div data-id="template_icon" class="col p-0">
+                            <img data-id="template_icon_img" draggable="false" class="transaction_icon m-2" src="~/static/icons/ic_blank_purple.svg">
+                        </div>
+                        <div id="text-center" class="w-100 mt-3 mb-2">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @RenderSection("Scripts", false)
+
+
+        <script>
+            $(document).ready(function () {
+
+                $('#new_category_main_category').addClass("hidden-element")
+                $("#modal_add_category_title").html("Новая главная категория");
+
+                $("#fab_add_category").removeClass("btn_green")
+                $("#fab_add_category").addClass("btn_red")
+                $("#button_add_category_cancel").addClass("btn_red")
+                $("#button_add_category_cancel").removeClass("btn_green")
+                $("#button_add_category_save").addClass("btn_red")
+                $("#button_add_category_save").removeClass("btn_green")
+                $("div#new_category_main_category").attr("data-target", "#modal_item_list_rasxod")
+                $("#CreateViewModel_Income").val(false);
+
+
+                $(".nav li a#rasxodtabbtn").click(function (e) {
+                    $("#fab_add_category").removeClass("btn_green")
+                    $("#fab_add_category").addClass("btn_red")
+                    $("#button_add_category_cancel").addClass("btn_red")
+                    $("#button_add_category_cancel").removeClass("btn_green")
+                    $("#button_add_category_save").addClass("btn_red")
+                    $("#button_add_category_save").removeClass("btn_green")
+                    $("div#new_category_main_category").attr("data-target", "#modal_item_list_rasxod")
+                    $("#CreateViewModel_Income").val(false);
+                    return true;
+                })
+
+                $(".nav li a#doxodtabbtn ").click(function (e) {
+                    $("#fab_add_category").removeClass("btn_red")
+                    $("#fab_add_category").addClass("btn_green")
+                    $("#button_add_category_cancel").addClass("btn_green")
+                    $("#button_add_category_cancel").removeClass("btn_red")
+                    $("#button_add_category_save").addClass("btn_green")
+                    $("#button_add_category_save").removeClass("btn_red")
+                    $("div#new_category_main_category").attr("data-target", "#modal_item_list_doxod")
+                    $("#CreateViewModel_Income").val(true);
+                    return true;
+                });
+
+                $("div#button_create_sub_category")
+                    .click(function (e) {
+                        $("#modal_add_category_title").html("Новая подкатегория");
+                        $('#new_category_main_category').removeClass("hidden-element")
+                        return true;
+                    });
+
+                $("div#button_create_main_category").click(function (e) {
+                    $("#modal_add_category_title").html("Новая главная категория");
+                    $('#new_category_main_category').addClass("hidden-element")
+                    return true;
+                });
+
+                $("div[data-id='template_icon']").click(function (e) {
+                    var src = $(this).children("img[data-id='template_icon_img']").attr("src");
+                    var lastIx = src.lastIndexOf("/");
+                    var image = src.substring(lastIx + 1);
+
+                    if ($("#modal_update_category").hasClass("show")) {
+                        $("#modal_update_category #UpdateViewModel_Image").val(image);
+                        $("#modal_update_category #new_category_icon").attr("src", src);
+                    } else if ($("#modal_add_category").hasClass("show")) {
+                        $("#modal_add_category #CreateViewModel_Image").val(image);
+                        $("#modal_add_category #new_category_icon").attr("src", src);
+                    }
+                    $("#modal_icon_list").modal('toggle');
+                })
+
+                $("#modal_item_list_container #template_category_container").click(function (e) {
+                    var id = $(this).attr("data-id");
+                    var name = $(this).attr("data-name");
+
+                    if ($("#modal_update_category").hasClass("show")) {
+                        $("#modal_update_category #UpdateViewModel_ParentId").val(id);
+                        $("#modal_update_category #CreateViewModel_ParentId_Text").val(name);
+
+                    } else if ($("#modal_add_category").hasClass("show")) {
+                        $("#modal_add_category #CreateViewModel_ParentId").val(id);
+                        $("#modal_add_category #CreateViewModel_ParentId_Text").val(name);
+                    } else if ($("#modal_add_transaction").hasClass("show")) {
+                        $("#modal_add_transaction #CreateViewModel_CategoryId").val(id);
+                        $("#modal_add_transaction #CreateViewModel_CategoryName").val(name);
+                    }
+
+                    $("#modal_item_list_doxod").modal("hide")
+                    $("#modal_item_list_rasxod").modal("hide")
+                })
+
+                $("#doxodi .d-flex.align-items-center.w-100.px-1.item_selector").click(function (e) {
+                    e.preventDefault();
+                    if ($(this).attr("aria-expanded") == "true")
+                        $(this).children("#template_category_options").addClass("hidden-element")
+
+                    else if ($(this).attr("aria-expanded") == "false") {
+                        $(this).children("#template_category_options").removeClass("hidden-element")
+                    }
+                })
+
+                $("#rasxodi .d-flex.align-items-center.w-100.px-1.item_selector").click(function (e) {
+                    e.preventDefault();
+                    if ($(this).attr("aria-expanded") == "true")
+                        $(this).children("#template_category_options").addClass("hidden-element")
+
+                    else if ($(this).attr("aria-expanded") == "false") {
+                        $(this).children("#template_category_options").removeClass("hidden-element")
+                    }
+                })
+
+                $("#template_category_options_edit.dropdown-item").click(function (e) {
+                    e.preventDefault();
+                    var id = $(this).attr("data-id");
+
+                    $.get(`/category/${id}`, function (data) {
+                        var parentId = data["parentId"];
+                        $("#modal_update_category #UpdateViewModel_Name").val(data["name"]);
+                        $("#modal_update_category #UpdateViewModel_Image").val(data["image"]);
+                        $("#modal_update_category #UpdateViewModel_Id").val(id);
+                        $("#modal_update_category #new_category_icon").attr("src", `/static/icons/${data["image"]}`);
+                        if (parentId !== null) {
+
+                            $("#modal_update_category #UpdateViewModel_ParentId").val(parentId);
+                            $("#modal_update_category #CreateViewModel_ParentId_Text").val(data["parent"]);
+                        } else {
+                            $("#modal_update_category #new_category_main_category.input-group").addClass("hidden-element")
+                        }
+                        $("#modal_update_category").modal('toggle');
+                    })
+                })
+
+                $("#template_category_options_delete.dropdown-item").click(function (e) {
+                    var id = $(this).attr("data-id");
+                    $.post(`/category/${id}/delete`, function (data) {
+                        location.reload();
+                    });
+                });
+
+                // form submit reset
+                $("#modal_update_category #button_add_category_cancel").click(function (e) {
+                    // reset modal update
+                    $("#modal_update_category #UpdateViewModel_Name").val("");
+                    $("#modal_update_category #UpdateViewModel_Image").val("");
+                    $("#modal_update_category #UpdateViewModel_Id").val("");
+                    $("#modal_update_category #new_category_icon").attr("src", `/static/icons/ic_blank_grey.svg`);
+                    $("#modal_update_category #UpdateViewModel_ParentId").val("");
+                    $("#modal_update_category #CreateViewModel_ParentId_Text").val("");
+                })
+
+                // form submit reset
+                $("#modal_add_category #button_add_category_cancel").click(function (e) {
+                    // reset modal create
+                    $("#modal_add_category #CreateViewModel_Name").val("");
+                    $("#modal_add_category #CreateViewModel_Image").val("");
+                    $("#modal_add_category #CreateViewModel_Id").val("");
+                    $("#modal_add_category #new_category_icon").attr("src", `/static/icons/ic_blank_grey.svg`);
+                    $("#modal_add_category #CreateViewModel_ParentId").val("");
+                    $("#modal_add_category #CreateViewModel_ParentId_Text").val("");
+                });
+
+                // doxod create
+                $("#fab_add_tr_income").click(function (e) {
+                    $("#modal_add_transaction #CreateViewModel_Income").val("true")
+
+                    $("#modal_add_transaction #modal_add_transaction_title").html("Новые Доходы")
+
+                    $("#modal_add_transaction #button_add_transaction_cancel").removeClass("btn_red")
+                    $("#modal_add_transaction #button_add_transaction_cancel").addClass("btn_green")
+
+                    $("#modal_add_transaction #button_add_transaction_save").removeClass("btn_red")
+                    $("#modal_add_transaction #button_add_transaction_save").addClass("btn_green")
+
+                    $("#modal_add_transaction #button_add_transaction_save_new").removeClass("btn_red")
+                    $("#modal_add_transaction #button_add_transaction_save_new").addClass("btn_green")
+
+                    $("#modal_add_transaction #transaction_category_add").attr("data-target", "#modal_item_list_doxod")
+
+
+                    $("#modal_add_transaction").modal("toggle");
+                });
+
+
+
+
+                // rasxod create
+                $("#fab_add_tr_expense").click(function (e) {
+                    $("#modal_add_transaction #CreateViewModel_Income").val("false")
+
+                    $("#modal_add_transaction #modal_add_transaction_title").html("Новые расходы")
+
+                    $("#modal_add_transaction #button_add_transaction_cancel").removeClass("btn_green")
+                    $("#modal_add_transaction #button_add_transaction_cancel").addClass("btn_red")
+
+                    $("#modal_add_transaction #button_add_transaction_save").removeClass("btn_green")
+                    $("#modal_add_transaction #button_add_transaction_save").addClass("btn_red")
+
+                    $("#modal_add_transaction #button_add_transaction_save_new").removeClass("btn_green")
+                    $("#modal_add_transaction #button_add_transaction_save_new").addClass("btn_red")
+
+
+                    $("#modal_add_transaction #transaction_category_add").attr("data-target", "#modal_item_list_rasxod")
+
+
+                    $("#modal_add_transaction").modal("toggle");
+                });
+
+                // transaction modal cancel
+                $("#modal_add_transaction #button_add_transaction_cancel").click(function () {
+                    $("#modal_add_transaction").modal('hide');
+                    $("#modal_add_transaction #CreateViewModel_Amount").val("");
+                    $("#modal_add_transaction #CreateViewModel_Description").val("");
+                    $("#modal_add_transaction #CreateViewModel_CategoryId").val("");
+                    $("#modal_add_transaction #CreateViewModel_CategoryName").val("");
+                    $("#modal_add_transaction #CreateViewModel_Income").val("");
+                    $("#modal_add_transaction #CreateViewModel_CreatedTime").val("");
+                })
+
+                $("form#add_transaction_form").submit(function () {
+                    var el = $("form#add_transaction_form #CreateViewModel_CategoryId");
+                    if (el.val() == 0) {
+                        $("form#add_transaction_form #CreateViewModel_CategoryName").addClass("is-invalid");
+                        el.addClass("is_hint").addClass("is-invalid");
+                        return false;
+                    }
+                    return true;
+                })
+
+                $('#CreateViewModel_CreatedTime').bootstrapMaterialDatePicker({
+                    format: 'LLL',
+                    nowButton: true,
+                    clearButton: true,
+
+                    // Include moment.js's language file
+                    lang: 'ru',
+                    currentDate: new Date(),
+                    cancelText: 'Назад',
+                    okText: 'OK',
+                    clearText: 'Очистить',
+                    nowText: 'Сейчас'
+                });
+
+                $('#input_charts_categories_date_from').bootstrapMaterialDatePicker({
+                    format: 'LL',
+                    nowButton: true,
+                    clearButton: true,
+                    time: false,
+
+                    currentDate: moment().add(-30, "days"),
+                    // Include moment.js's language file
+                    lang: 'ru',
+                    cancelText: 'Назад',
+                    okText: 'OK',
+                    clearText: 'Очистить',
+                    nowText: 'Сейчас'
+                });
+                $('#input_charts_categories_date_to').bootstrapMaterialDatePicker({
+                    format: 'LL',
+                    nowButton: true,
+                    clearButton: true,
+                    time: false,
+
+                    currentDate: moment(),
+                    // Include moment.js's language file
+                    lang: 'ru',
+                    cancelText: 'Назад',
+                    okText: 'OK',
+                    clearText: 'Очистить',
+                    nowText: 'Сейчас'
+                });
+
+
+
+                $("#button_charts_show_report").click(function (e) {
+                    var date_from = $("#input_charts_categories_date_from").val();
+                    var date_to = $("#input_charts_categories_date_to").val();
+                    var transactionType = $("input[name='radio_chart_ei']:checked").val();
+                    var accountId = $("select#select_charts_account").val();
+
+                    var data = {
+                        startDate: date_from,
+                        endDate: date_to,
+                        transactionType: transactionType,
+                        accountId: parseInt(accountId)
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/operations/filter",
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(data),
+                        success: function (data) {
+                            display_transactions(data);
+                        }
+                    })
+                });
+
+
+                function display_transactions(data) {
+                    var body = $("#list_transactions table tbody")
+
+                    body.empty();
+                    var items = data["transactions"]
+                    var summary = data["summary"]
+
+                    if (summary.startsWith("-")) {
+                        $("span#list_transactions_header span").css("color", "#F54C3F;");
+                    } else {
+                        $("span#list_transactions_header span").css("color", "#4CAF50;");
+                    }
+                    $("span#list_transactions_header span").html(summary);
+
+                    for (var el in items) {
+                        body.append(`<tr data-id="${items[el]["id"]}" data-is-special="false">
+                                                    <td>${items[el]["id"]}</td>
+                                                    <td>${items[el]["income"] ? "Доход" : "Расход"}</td>
+                                                    <td>${items[el]["category"]}</td>
+                                                    <td>${items[el]["accountName"]}</td>
+                                                    <td>${items[el]["createdTime"]}</td>
+                                                    <td class="text-center">${items[el]["amount"]}</td>
+                                                        <td>${items[el]["summary"]}</td>
+                                                        <td>${items[el]["description"]}</td>
+                                                    </tr>`)
+                    }
+
+                }
+
+
+                $("#sidebar_collapse_button").click(function (e) {
+                    var nav = $("#sidebar")
+                    if (nav.hasClass("hidden")) {
+                        // show
+                        nav.removeClass("hidden")
+                        $("#page_container").removeClass("full");
+                        $("#navbar_top").removeClass("full");
+                    } else {
+                        // hide
+                        nav.addClass("hidden");
+                        $("#page_container").addClass("full");
+                        $("#navbar_top").addClass("full");
+                    }
+                })
+            })
+        </script>
+
+        </div>
+</body>
+
+</html>

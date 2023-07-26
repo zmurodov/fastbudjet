@@ -1,0 +1,335 @@
+﻿@model FastBudjet.Models.CategoryViewModel.IndexViewModel
+
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+    ViewData["RasxodCategory"] = Model.ExpenseCategories;
+    ViewData["DoxodCategory"] = Model.IncomingCategories;
+    ViewData["Header"] = "Категории";
+    ViewData["Title"] = "Категории";
+}
+
+<div id="preferences_page_container" class="row mt-3 mb-2">
+    <div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+        <ul id="div_preferences_selector_container" class="row card_small_body mx-0 nav nav-tabs">
+            <li class="nav-item col d-flex full_centered text-dark button_icon">
+                <a id="doxodtabbtn" class="nat-link py-2 w-100 h-100 text-decoration-none text-dark d-block text-center"
+                   data-toggle="tab" href="#doxodi" style="margin-bottom: 0px; vertical-align: middle;">
+                    Доходы
+                </a>
+            </li>
+            <li class="nav-item col d-flex full_centered text-dark button_icon">
+                <a id="rasxodtabbtn" class="nat-link py-2 w-100 h-100 text-decoration-none text-dark  d-block text-center active"
+                   style="margin-bottom: 0px; vertical-align: middle;"
+                   data-toggle="tab" href="#rasxodi">
+                    Расходы
+                </a>
+            </li>
+        </ul>
+
+        <div class="card_small_body d-flex flex-column mt-3 pt-1 tab-content">
+            <div id="rasxodi" class="list-group pt-0 tab-pane fade show active">
+                @foreach (var category in Model.ExpenseCategories)
+                {
+                    <div class="d-flex align-items-center w-100 px-1 item_selector collapsed" data-toggle="collapse"
+                         aria-expanded="false" data-target="#subs_container_@category.CategoryId" aria-controls="subs_container_@category.CategoryId">
+                        <div id="template_category_subcat_line_container" class="d-flex flex-column subcategory_lines hidden-element">
+                            <div class="vertical_line"></div>
+                            <div class="horizontal_line"></div>
+                            <div id="template_category_subcat_bottom_line" class="vertical_line"></div>
+                        </div>
+
+                        <img id="template_category_icon_img" draggable="false" class="transaction_icon my-1" src="~/static/icons/@category.Image">
+
+                        <div class="flex_layout">
+                            <div id="template_category_name" class="mr-2">@category.Name</div>
+                        </div>
+
+
+                        <div id="template_category_options" class="dropdown menu_holder hidden-element">
+                            <div class="d-flex align-items-center justify-content-center transaction_options noselect" data-toggle="dropdown">
+                                <i class="material-icons">more_vert</i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" type="button" data-id="@category.CategoryId" id="template_category_options_edit">Редактировать категорию</button>
+                                <button class="dropdown-item" type="button" data-id="@category.CategoryId" id="template_category_options_delete">Удалить категорию</button>
+                            </div>
+                        </div>
+
+                        <i id="template_category_show_subcats" class="material-icons ml-auto">keyboard_arrow_down</i>
+                    </div>
+                    <div id="subs_container_@category.CategoryId" class="collapse multi-collapse">
+
+                        @for (var i = 0; i < category.Children.Count; i++)
+                        {
+                            var child = category.Children.ElementAt(i);
+                            <div class="d-flex align-items-center w-100 px-1 item_no_select" id="template_category_container">
+                                <div id="template_category_subcat_line_container" class="d-flex flex-column subcategory_lines">
+                                    <div class="vertical_line"></div>
+                                    <div class="horizontal_line"></div>
+                                    <div id="template_category_subcat_bottom_line" class="vertical_line @(i + 1 == category.Children.Count ? "invisible-keep-space-element" : "")"></div>
+                                </div>
+
+                                <img id="template_category_icon_img" draggable="false" class="transaction_icon my-1" src="~/static/icons/@child.Image">
+
+                                <div class="flex_layout">
+                                    <div id="template_category_name" class="mr-2">@child.Name</div>
+                                </div>
+
+
+                                <div id="template_category_options" class="dropdown menu_holder">
+                                    <div class="d-flex align-items-center justify-content-center transaction_options noselect" data-toggle="dropdown">
+                                        <i class="material-icons">more_vert</i>
+                                    </div>
+                                    <div class="dropdown-menu">
+                                        <button class="dropdown-item" type="button" data-id="@child.CategoryId" id="template_category_options_edit">Редактировать категорию</button>
+                                        <button class="dropdown-item" type="button" data-id="@child.CategoryId" id="template_category_options_delete">Удалить категорию</button>
+                                    </div>
+                                </div>
+
+                                <i id="template_category_show_subcats" class="material-icons ml-auto hidden-element">keyboard_arrow_down</i>
+                            </div>
+
+                        }
+                    </div>
+                }
+            </div>
+
+            <div id="doxodi" class="list-group pt-0 tab-pane fade">
+                @foreach (var category in Model.IncomingCategories)
+                {
+                    <div class="d-flex align-items-center w-100 px-1 item_selector collapsed" data-toggle="collapse"
+                         aria-expanded="false" data-target="#subs_container_@category.CategoryId" aria-controls="subs_container_@category.CategoryId">
+                        <div id="template_category_subcat_line_container" class="d-flex flex-column subcategory_lines hidden-element">
+                            <div class="vertical_line"></div>
+                            <div class="horizontal_line"></div>
+                            <div id="template_category_subcat_bottom_line" class="vertical_line"></div>
+                        </div>
+
+                        <img id="template_category_icon_img" draggable="false" class="transaction_icon my-1" src="~/static/icons/@category.Image">
+
+                        <div class="flex_layout">
+                            <div id="template_category_name" class="mr-2">@category.Name</div>
+                        </div>
+
+
+                        <div id="template_category_options" class="dropdown menu_holder hidden-element" style="z-index: 100;">
+                            <div class="d-flex align-items-center justify-content-center transaction_options noselect" data-toggle="dropdown">
+                                <i class="material-icons">more_vert</i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" type="button" data-id="@category.CategoryId" id="template_category_options_edit">Редактировать категорию</button>
+                                <button class="dropdown-item" type="button" data-id="@category.CategoryId" id="template_category_options_delete">Удалить категорию</button>
+                            </div>
+                        </div>
+
+                        <i id="template_category_show_subcats" class="material-icons ml-auto">keyboard_arrow_down</i>
+                    </div>
+                    <div id="subs_container_@category.CategoryId" class="collapse multi-collapse">
+
+                        @for(var i = 0; i < category.Children.Count; i++)
+                         {
+                                    var child = category.Children.ElementAt(i);
+                            <div class="d-flex align-items-center w-100 px-1 item_no_select" id="template_category_container">
+                                <div id="template_category_subcat_line_container" class="d-flex flex-column subcategory_lines">
+                                    <div class="vertical_line"></div>
+                                    <div class="horizontal_line"></div>
+                                    <div id="template_category_subcat_bottom_line" class="vertical_line @(i + 1 == category.Children.Count ? "invisible-keep-space-element" : "")"></div>
+                                </div>
+
+                                <img id="template_category_icon_img" draggable="false" class="transaction_icon my-1" src="~/static/icons/@child.Image">
+
+                                <div class="flex_layout">
+                                    <div id="template_category_name" class="mr-2">@child.Name</div>
+                                </div>
+
+
+                                <div id="template_category_options" class="dropdown menu_holder">
+                                    <div class="d-flex align-items-center justify-content-center transaction_options noselect" data-toggle="dropdown">
+                                        <i class="material-icons">more_vert</i>
+                                    </div>
+                                    <div class="dropdown-menu">
+                                        <button class="dropdown-item" type="button" data-id="@child.CategoryId" id="template_category_options_edit">Редактировать категорию</button>
+                                        <button class="dropdown-item" type="button" data-id="@child.CategoryId" id="template_category_options_delete">Удалить категорию</button>
+                                    </div>
+                                </div>
+
+                                <i id="template_category_show_subcats" class="material-icons ml-auto hidden-element">keyboard_arrow_down</i>
+                            </div>
+
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<button id="fab_add_category" class="btn btn_fab btn_red" data-toggle="modal" data-target="#modal_add_category">
+    <i class="material-icons">add</i>
+</button>
+
+
+<div id="modal_add_category" class="modal fade" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog small50 modal-lg">
+        <div class="modal-content pt-1 pb-2 px-2">
+            <div class="row card_small_body mt-2 mx-0">
+                <div class="col d-flex full_centered text-dark button_icon" id="button_create_main_category">
+                    Новая главная категория
+                </div>
+                <div class="col d-flex full_centered text-dark button_icon" id="button_create_sub_category">
+                    Новая подкатегория
+                </div>
+            </div>
+
+            <p class="modal_title_big noselect mt-2 mx-auto" id="modal_add_category_title">
+                Новая главная
+                категория
+            </p>
+            <form asp-controller="Category" asp-action="CreateCategory" method="post">
+                <div class="mt-1 mr-3">
+
+                    <div class="validation" asp-validation-summary="ModelOnly" />
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons material-icons-48px align-self-center">label</i>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label  asp-for="CreateViewModel.Name">Название<span class="text-danger">*</span></label>
+                            <input required asp-for="CreateViewModel.Name" type="text" class="form-control"
+                                   maxlength="149">
+                            <div asp-validation-for="CreateViewModel.Name" class="invalid-feedback" id="new_category_name_error_msg">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="new_category_main_category" data-toggle="modal" data-target="#modal_item_list" class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons material-icons-48px align-self-center">folder</i>
+                            </span>
+                        </span>
+                        <div class="form-group">
+                            <label asp-for="CreateViewModel.ParentId">Основная категория <span class="text-danger">*</span></label>
+                            <input asp-for="CreateViewModel.ParentId" type="hidden" class="form-control cursor_pointer"
+                                   
+                                   readonly="">
+                            <input id="CreateViewModel_ParentId_Text" type="text" class="form-control cursor_pointer"
+                                   value="Выбрать категорию"
+                                   readonly="">
+                            <div asp-validation-for="CreateViewModel.ParentId" class="invalid-feedback">Неверное значение</div>
+                        </div>
+                    </div>
+
+
+                    <div class="input-group d-flex align-items-center mt-1" data-toggle="modal" data-target="#modal_icon_list">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons material-icons-48px align-self-center">lens</i>
+                            </span>
+                        </span>
+                        <input required asp-for="CreateViewModel.Image" type="text" hidden />
+                        <span id="new_category_icon_text">Изображение<span class="text-danger">*</span> :</span>
+                        <img id="new_category_icon" draggable="false" class="transaction_icon_big ml-4"
+                             src="~/static/icons/ic_blank_grey.svg">
+                        <div asp-validation-for="CreateViewModel.Image" class="invalid-feedback"></div>
+                    </div>
+                    <input asp-for="CreateViewModel.Income" type="hidden" hidden />
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="button" id="button_add_category_cancel" data-dismiss="modal" class="btn_general btn_red mr-2">
+                        Отменить
+                    </button>
+                    <button type="submit" id="button_add_category_save" class="btn_general btn_red">
+                        Сохранить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="modal_update_category" class="modal fade" data-backdrop="static" role="dialog">
+    <div class="modal-dialog small50 modal-lg">
+        <div class="modal-content pt-1 pb-2 px-2">
+
+            <div class="row card_small_body mt-2 mx-0 hidden-element">
+                <div class="col d-flex full_centered text-dark button_icon" id="button_create_main_cat">
+                    Новая главная категория
+                </div>
+                <div class="col d-flex full_centered text-dark button_icon" id="button_create_sub_cat">
+                    Новая подкатегория
+                </div>
+            </div>
+
+            <p class="modal_title_big noselect mt-2 mx-auto" id="modal_add_category_title">Редактировать категорию</p>
+            <form asp-controller="Category" asp-action="UpdateCategory" method="post">
+                <div class="mt-1 mr-3">
+
+                    <div class="validation" asp-validation-summary="ModelOnly" />
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons material-icons-48px align-self-center">label</i>
+                            </span>
+                        </div>
+                        <input id="UpdateViewModel_Id" type="hidden" name="id" />
+                        <div class="form-group">
+                            <label asp-for="UpdateViewModel.Name">Название<span class="text-danger">*</span></label>
+                            <input required asp-for="UpdateViewModel.Name" type="text" class="form-control" 
+                                   maxlength="149">
+                            <div asp-validation-for="CreateViewModel.Name" class="invalid-feedback" id="new_category_name_error_msg">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="new_category_main_category" data-toggle="modal" data-target="#modal_item_list" class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons material-icons-48px align-self-center">folder</i>
+                            </span>
+                        </span>
+                        <div class="form-group">
+                            <label asp-for="UpdateViewModel.ParentId">Основная категория <span class="text-danger">*</span></label>
+                            <input asp-for="UpdateViewModel.ParentId" type="hidden" class="form-control cursor_pointer"
+                                   readonly="">
+                            <input id="CreateViewModel_ParentId_Text" type="text" class="form-control cursor_pointer"
+                                   value="Выбрать категорию"
+                                   readonly="">
+                            <div asp-validation-for="CreateViewModel.ParentId" class="invalid-feedback">Неверное значение</div>
+                        </div>
+                    </div>
+
+
+                    <div class="input-group d-flex align-items-center mt-1" data-toggle="modal" data-target="#modal_icon_list">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons material-icons-48px align-self-center">lens</i>
+                            </span>
+                        </span>
+                        <input required asp-for="UpdateViewModel.Image" type="text" hidden />
+                        <span id="new_category_icon_text">Изображение<span class="text-danger">*</span> :</span>
+                        <img id="new_category_icon" draggable="false" class="transaction_icon_big ml-4"
+                             src="~/static/icons/ic_blank_grey.svg">
+                        <div asp-validation-for="CreateViewModel.Image" class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="button" id="button_add_category_cancel" data-dismiss="modal" class="btn_general btn_red mr-2">
+                        Отменить
+                    </button>
+                    <button type="submit" id="button_add_category_save" class="btn_general btn_red">
+                        Сохранить
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿<nav id="sidebar">
+    <header class="d-inline-flex align-content-center sidebar_header">
+        <img src="~/static/images/app_icon_64.png" draggable="false" class="app_icon_32 d-flex align-self-center">
+        <div class="app_title align-self-center noselect">Быстрый Бюджет</div>
+    </header>
+
+    <hr class="sidebar_divider">
+
+    <ul class="list-unstyled sidebar_content">
+        <li class="active">
+            <a id="navbutton_dashboard" data-page-number="0" data-html="/dashboard/trial"
+               data-script="~/static/js/29/page_overview.min.js" data-text="Обзор"
+               asp-controller="Home" asp-action="Index" class="@(ViewData["Title"] == "Обзор" ? "active" : "")">
+                <i class="material-icons">dashboard</i>Обзор
+            </a>
+        </li>
+        <li>
+            <a asp-controller="Operations" asp-action="Index" id="navbutton_transactions" data-page-number="1" data-html="/transactions/trial"
+               data-script="~/static/js/29/page_transactions.min.js" data-text="Операции" class="@(ViewData["Title"] == "Операции" ? "active" : "")">
+                <i class="material-icons">list</i>Операции
+            </a>
+        </li>
+
+        <li>
+            <a asp-controller="Accounts" asp-action="Index" id="navbutton_accounts" data-page-number="3" class="@(ViewData["Title"] == "Счета" ? "active" : "")"  data-text="Счета"  >
+                <i class="material-icons">account_balance</i>Счета
+            </a>
+        </li>
+
+        <li>
+
+            <a id="navbutton_preferences" class="@(ViewData["Title"] == "Категории" ? "active" : "")" role="button" asp-controller="Category" asp-action="Index">
+                <i class="material-icons">style</i>Категории
+            </a>
+
+
+        </li>
+
+    </ul>
+</nav>
