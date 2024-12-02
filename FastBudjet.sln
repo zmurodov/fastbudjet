@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastBudjet", "FastBudjet\FastBudjet.csproj", "{90BBD732-6996-4561-8763-A1752E8C70F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastBudjet.Web", "FastBudjet.Web\FastBudjet.Web.csproj", "{90BBD732-6996-4561-8763-A1752E8C70F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastBudjet.Service", "FastBudjet.Service\FastBudjet.Service.csproj", "{EEBFBFC8-7F3C-42F7-BB35-1462FF00F088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastBudjet.Core", "FastBudjet.Core\FastBudjet.Core.csproj", "{EEBFBFC8-7F3C-42F7-BB35-1462FF00F088}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastBudjet.Data", "FastBudjet.Data\FastBudjet.Data.csproj", "{ADC7FF30-4C0E-4C99-954C-98E4CA9B1F16}"
 EndProject
